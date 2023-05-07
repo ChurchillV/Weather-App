@@ -21,9 +21,9 @@
             <div class="col">
                 <div class="row">
                     <div class="input-group">
-                        <input type="text" placeholder="City name (Eg. London)" class="form-control city-name">
+                        <input type="text" placeholder="Enter city name" class="form-control city-name">
                         <div class="input-group-append">
-                            <button class="btn btn-secondary form-control submit-button" type="submit">Search</button>
+                            <button class="btn btn-secondary form-control submit-button" type="submit" onclick="getWeather()">Search</button>
                         </div>
                     </div>
                 </div>
@@ -32,12 +32,24 @@
         </div>
         <div class="row mt-5">
             <div class="col"></div>
-            <div class="col card ml-3 mr-3">
-                <div class="card-body">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title"><h2>London</h2></div>
+                        <img src="./images/icons8-sun-144.png" alt="">
+                            <h1>29°C</h1>
+                            <img src="./images/windy.png" alt="" class="wind-speed">
+                            <h3>35km/h</h3>
+                            <h4>Wind Speed</h4>
+                            <img src="./images/humidity.png" alt="" class="humidity">
+                            <h3>38%</h3>
+                            <h4>Humidity</h4>
+                    </div>
                 </div>
             </div>
             <div class="col"></div>
         </div>
     </div>
+    <script src="./script.js"></script>
 </body>
 </html>

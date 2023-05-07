@@ -1,4 +1,4 @@
-.form-group input, button {
-    display: inline-block;
-    vertical-align: middle;
+.wind-speed, .humidity {
+    width: 40px;
+    border-radius: 6px;
 }
