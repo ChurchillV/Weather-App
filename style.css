@@ -81,3 +81,39 @@ body {
     font-size: 30px;
     font-weight: bold;
   }
+
+  .pop-up {
+    width: 400px;
+    top: 0;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%) scale(0.1);
+    margin: 50px auto;
+    padding: 20px 30px 30px;
+    align-content: center;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    transition: 0.4s transform, 0.4s top;
+    visibility: hidden;
+  }
+
+  .pop-up img {
+    width: 100px;
+    margin-top: -45px;
+  }
+
+  .pop-up h3 {
+    font-weight: 700;
+  }
+
+  .pop-up button {
+    width: 60%;
+    padding: 10px 10px;
+    font-size: 20px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+  }

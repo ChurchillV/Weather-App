@@ -1,11 +1,14 @@
 const submit_button = document.querySelector('#submit');
 const temp = document.querySelector('.temp');
-const location = document.querySelector('.location');
+const city = document.querySelector('.location');
 const wind_speed = document.querySelector('.wind-speed');
 const humidity = document.querySelector('.humidity');
 const description = document.querySelector('.desc');
 const apiKey = '25f8704ce87a636134414384d067d31c';
 const icon = document.querySelector('.weather-icon');
+const error = document.querySelector('.warning-message');
+const popup = document.querySelector('.pop-up');
+const weather_card = document.querySelector('.weather-card');
 icon.src = 'https://openweathermap.org/img/wn/10d@2x.png';
 
 submit_button.addEventListener('click', function() {
@@ -16,12 +19,28 @@ submit_button.addEventListener('click', function() {
     .then(data => {
         console.log(data);
         console.log(cityName);
-        location.innerHTML = data['name'];
+        city.innerHTML = data['name'];
         temp.innerHTML = `${(data['main']['temp'] - 273).toFixed(1)}°C`;
         wind_speed.innerHTML = `${data.wind.speed}km/h`;
-        humidity.innerHTML = `${data.main.humidity}%`; 
-        description.innerHTML = `${data.weather[0].main}`;
+        humidity.innerHTML = `${data.main.humidity}%`;
+        const desc_data = data.weather[0].description;
+        description.innerHTML = `${desc_data.toUpperCase()}`;
         icon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
     })
-    .catch(err => console.log(err))
+    .catch(err => {
+        error.innerHTML = `Invalid city: ${cityName}`;
+        popup.style.visibility = "visible";
+        popup.style.transform = "translate(-50%, -50%) scale(1)";
+        popup.style.top = "50%";
+        weather_card.style.filter = "blur(4px)";
+        document.querySelector('#name_value').value = '';
+        console.log(err);
+    })
 })
+
+function clearPopUp() {
+    popup.style.transform = "translate(-50%, -50%) scale(0.1)";
+    popup.style.top = "0";
+    weather_card.style.filter = "none";
+    popup.style.visibility = "hidden";
+}
