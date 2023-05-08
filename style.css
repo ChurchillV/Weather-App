@@ -43,7 +43,10 @@ body {
   
   .main img {
     margin-top: 20px;
-    margin-bottom: 20px;
+  }
+
+  .weather-icon {
+    width: 200px;
   }
   
   .main .temp {

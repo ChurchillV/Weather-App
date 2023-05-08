@@ -6,6 +6,7 @@ const humidity = document.querySelector('.humidity');
 const description = document.querySelector('.desc');
 const apiKey = '25f8704ce87a636134414384d067d31c';
 const icon = document.querySelector('.weather-icon');
+icon.src = 'https://openweathermap.org/img/wn/10d@2x.png';
 
 submit_button.addEventListener('click', function() {
     const cityName = document.querySelector('#name_value').value;
@@ -21,7 +22,6 @@ submit_button.addEventListener('click', function() {
         humidity.innerHTML = `${data.main.humidity}%`; 
         description.innerHTML = `${data.weather[0].main}`;
         icon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-        icon.style.width = '200px';
     })
     .catch(err => console.log(err))
 })
