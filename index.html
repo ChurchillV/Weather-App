@@ -3,53 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="./style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <span class="navbar-brand mb-0 h1">Simple Weather App</span>
-        </div>
-    </nav>
-
-    <div class="container">
-        <div class="row mt-5">
-            <div class="col"></div>
-            <div class="col">
-                <div class="row">
-                    <div class="input-group">
-                        <input type="text" placeholder="Enter city name" class="form-control city-name">
-                        <div class="input-group-append">
-                            <button class="btn btn-secondary form-control submit-button" type="submit" onclick="getWeather()">Search</button>
-                        </div>
+        <div class="weather-card">
+            <div class="search">
+                <input type="text" placeholder="Enter city name" spellcheck="false">
+                <button><img src="./images/search.png" alt=""></button>
+            </div>
+            <div class="main">
+                <img src="./images/icons8-sun-144.png" alt="">
+                <h1 class="temp">22°C</h1>
+                <h2 class="location">London</h2>
+            </div>
+                <div class="details">
+                    <div class="col">
+                        <img src="./images/gust.png" alt="">
+                        <h3 class="wind-speed">35km/h</h3>
+                        <h4>Wind Speed</h4>
+                    </div>
+                    <div class="col">
+                        <img src="./images/drop.jpg" alt="">
+                        <h3 class="humidity">35%</h3>
+                        <h4>Humidity</h4>
                     </div>
                 </div>
-            </div>
-            <div class="col"></div>
         </div>
-        <div class="row mt-5">
-            <div class="col"></div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="card-title"><h2>London</h2></div>
-                        <img src="./images/icons8-sun-144.png" alt="">
-                            <h1>29°C</h1>
-                            <img src="./images/windy.png" alt="" class="wind-speed">
-                            <h3>35km/h</h3>
-                            <h4>Wind Speed</h4>
-                            <img src="./images/humidity.png" alt="" class="humidity">
-                            <h3>38%</h3>
-                            <h4>Humidity</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col"></div>
-        </div>
-    </div>
-    <script src="./script.js"></script>
 </body>
 </html>
