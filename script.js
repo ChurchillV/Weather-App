@@ -33,7 +33,7 @@ submit_button.addEventListener('click', function() {
         popup.style.transform = "translate(-50%, -50%) scale(1)";
         popup.style.top = "50%";
         weather_card.style.filter = "blur(4px)";
-        document.querySelector('#name_value').value = '';
+        city.innerHTML = 'London';
         console.log(err);
     })
 })

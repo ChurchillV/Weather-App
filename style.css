@@ -116,4 +116,5 @@ body {
     border: none;
     border-radius: 10px;
     color: #fff;
+    cursor: pointer;
   }
