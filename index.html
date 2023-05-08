@@ -10,13 +10,13 @@
 <body>
         <div class="weather-card">
             <div class="search">
-                <input type="text" placeholder="Enter city name" spellcheck="false">
-                <button><img src="./images/search.png" alt=""></button>
+                <input type="text" placeholder="Enter city name" spellcheck="false" id="name_value">
+                <button class="submit" id="submit"><img src="./images/search.png" alt=""></button>
             </div>
             <div class="main">
                 <img src="./images/icons8-sun-144.png" alt="">
                 <h1 class="temp">22°C</h1>
-                <h2 class="location">London</h2>
+                <h2 class="location" id="location">London</h2>
             </div>
                 <div class="details">
                     <div class="col">
@@ -31,5 +31,6 @@
                     </div>
                 </div>
         </div>
+        <script src="./script.js"></script>
 </body>
 </html>
