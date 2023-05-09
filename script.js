@@ -4,7 +4,6 @@ const city = document.querySelector('.location');
 const wind_speed = document.querySelector('.wind-speed');
 const humidity = document.querySelector('.humidity');
 const description = document.querySelector('.desc');
-const apiKey = '25f8704ce87a636134414384d067d31c';
 const icon = document.querySelector('.weather-icon');
 const error = document.querySelector('.warning-message');
 const popup = document.querySelector('.pop-up');
@@ -13,12 +12,11 @@ icon.src = 'https://openweathermap.org/img/wn/10d@2x.png';
 
 submit_button.addEventListener('click', function() {
     const cityName = document.querySelector('#name_value').value;
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=25f8704ce87a636134414384d067d31c`;
     fetch(apiUrl)
     .then(response => response.json())
     .then(data => {
         console.log(data);
-        console.log(cityName);
         city.innerHTML = data['name'];
         temp.innerHTML = `${(data['main']['temp'] - 273).toFixed(1)}°C`;
         wind_speed.innerHTML = `${data.wind.speed}km/h`;
@@ -28,15 +26,20 @@ submit_button.addEventListener('click', function() {
         icon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
     })
     .catch(err => {
+        displayPopUp();
         error.innerHTML = `Invalid city: ${cityName}`;
-        popup.style.visibility = "visible";
-        popup.style.transform = "translate(-50%, -50%) scale(1)";
-        popup.style.top = "50%";
-        weather_card.style.filter = "blur(4px)";
-        city.innerHTML = 'London';
         console.log(err);
     })
 })
+
+function displayPopUp() {
+    popup.style.visibility = "visible";
+    popup.style.transform = "translate(-50%, -50%) scale(1)";
+    popup.style.top = "50%";
+    weather_card.style.filter = "blur(4px)";
+    city.innerHTML = 'London';
+    document.querySelector('#name_value').value = '';
+}
 
 function clearPopUp() {
     popup.style.transform = "translate(-50%, -50%) scale(0.1)";

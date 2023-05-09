@@ -118,3 +118,6 @@ body {
     color: #fff;
     cursor: pointer;
   }
+  .pop-up button:hover {
+    background-color: #034a97;
+  }
